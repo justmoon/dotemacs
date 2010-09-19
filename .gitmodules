@@ -1,0 +1,12 @@
+[submodule "vendor/dtrt-indent"]
+	path = vendor/dtrt-indent
+	url = git://git.savannah.nongnu.org/dtrt-indent.git
+[submodule "vendor/nxhtml"]
+	path = vendor/nxhtml
+	url = http://github.com/emacsmirror/nxhtml.git
+[submodule "vendor/backup-dir"]
+	path = vendor/backup-dir
+	url = http://github.com/emacsmirror/backup-dir.git
+[submodule "vendor/xrefresh"]
+	path = vendor/xrefresh
+	url = git://github.com/justmoon/xrefresh-emacs.git
