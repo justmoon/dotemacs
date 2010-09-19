@@ -22,16 +22,23 @@
 ;; Undo/redo
 (require 'redo "vendor/redo.el")
 
-;; Tab width
-(setq default-tab-width 4)
-(setq tab-width 4)
-(setq indent-tabs-mode t)
+;; Tab behavior
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode t)
+(setq cua-auto-tabify-rectangles nil)
+
+;; Smart tabs
+(require 'smarttabs "vendor/smarttabs.el")
 
 ;; Auto-detect indentation
 (require 'dtrt-indent "vendor/dtrt-indent/dtrt-indent.el")
 (add-hook 'c-mode-common-hook
           (lambda ()
             (dtrt-indent-mode t)))
+
+;; Show whitespace
+(require 'whitespace)
+(global-whitespace-mode t)
 
 ;; Backup without cluttering file system
 (require 'backup-dir "vendor/backup-dir/backup-dir.el")
