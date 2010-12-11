@@ -36,8 +36,18 @@
           (lambda ()
             (dtrt-indent-mode t)))
 
+;; Indent CSS files in C-style
+;(setq cssm-indent-function #'cssm-c-style-indenter)
+
 ;; Show whitespace
+(setq whitespace-style '(trailing spaces tabs newline space-mark))
 (require 'whitespace)
+(setq whitespace-display-mappings
+	  '((space-mark   ?\    [?\xB7]     [?.])	; space
+		(space-mark   ?\xA0 [?\xA4]     [?_])	; hard space
+		(newline-mark ?\n   [?\xB6 ?\n] [?$ ?\n])	; end-of-line
+		(tab-mark   ?\t   [?\xBB ?\t] [?\\ ?\t])	; tab
+		))
 (global-whitespace-mode t)
 
 ;; Backup without cluttering file system
