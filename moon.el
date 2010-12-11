@@ -79,6 +79,18 @@
 ;; Line numbers
 (require 'linum)
 (global-linum-mode)
+(add-hook 'linum-before-numbering-hook
+		  (lambda ()
+			(let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
+			  (setq linum-format
+					`(lambda (line)
+					   (propertize (concat
+									(truncate-string-to-width ""
+															  (- ,w (length (number-to-string line)))
+															  nil
+															  ?\x2007)
+									(number-to-string line)) 'face 'linum))))))
+
 
 ;; Key rebinding
 (global-set-key (kbd "RET") 'newline-and-indent)
