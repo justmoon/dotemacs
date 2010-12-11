@@ -72,6 +72,9 @@
 (global-linum-mode)
 
 ;; Key rebinding
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "C-j") 'newline)
+
 (global-unset-key (kbd "M-SPC")) ; Used by Launchy
 (global-set-key (kbd "C-SPC") 'set-mark-command)
 
