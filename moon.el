@@ -110,8 +110,12 @@
 (define-key isearch-mode-map (kbd "C-y") 'isearch-yank-kill)
 
 ;; Windmove
-(setq windmove-wrap-around t)
+;(setq windmove-wrap-around t)
 (windmove-default-keybindings 'meta)
+(eval-after-load 'paredit ; Paredit tries to steal meta-up and meta-down
+  '(progn
+     (define-key paredit-mode-map (kbd "<M-up>") nil)
+     (define-key paredit-mode-map (kbd "<M-down>") nil)))
 
 ;; Start server for emacsclient
 (server-start)
