@@ -100,3 +100,10 @@
 ;;(setq cua-keep-region-after-copy t) ; Standard Windows behavior
 ;;(setq cua-toggle-set-mark nil) ; Original set-mark behavior - no TMM
 (cua-mode)
+
+;; No debugger please
+(setq debug-on-error nil)
+
+;; Highlight column 80
+;(require 'column-marker "vendor/column-marker/column-marker.el")
+;(add-hook 'font-lock-mode-hook (lambda () (interactive) (column-marker-1 80)))
