@@ -22,13 +22,22 @@
 ;; Undo/redo
 (require 'redo "vendor/redo.el")
 
-;; Tab behavior
+;; Indentation behavior
 (setq-default tab-width 4)
+(setq default-tab-width 4)
 (setq-default indent-tabs-mode t)
 (setq cua-auto-tabify-rectangles nil)
+(add-hook 'yaml-mode-hook '(lambda () (set (make-local-variable 'indent-tabs-mode) nil)))
+(add-hook 'c-mode-common-hook (lambda () (setq indent-tabs-mode t)))
+
+;; Special rules for argument indentation (affecting PHP arrays)
+(defun jm-extra-indent-setup ()
+  (c-set-offset 'arglist-intro '+))
+(add-hook 'c-mode-common-hook 'jm-extra-indent-setup)
 
 ;; Smart tabs
 (require 'smarttabs "vendor/smarttabs.el")
+(smart-tabs-advice js2-indent-line js2-basic-offset)
 
 ;; Auto-detect indentation
 (require 'dtrt-indent "vendor/dtrt-indent/dtrt-indent.el")
