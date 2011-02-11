@@ -28,12 +28,6 @@
 (setq-default indent-tabs-mode t)
 (setq cua-auto-tabify-rectangles nil)
 (add-hook 'yaml-mode-hook '(lambda () (set (make-local-variable 'indent-tabs-mode) nil)))
-(add-hook 'c-mode-common-hook (lambda () (setq indent-tabs-mode t)))
-
-;; Special rules for argument indentation (affecting PHP arrays)
-(defun jm-extra-indent-setup ()
-  (c-set-offset 'arglist-intro '+))
-(add-hook 'c-mode-common-hook 'jm-extra-indent-setup)
 
 ;; Smart tabs
 (require 'smarttabs "vendor/smarttabs.el")
@@ -41,9 +35,18 @@
 
 ;; Auto-detect indentation
 (require 'dtrt-indent "vendor/dtrt-indent/dtrt-indent.el")
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            (dtrt-indent-mode t)))
+
+;; Special rules for argument indentation (affecting PHP arrays)
+(defun my-c-mode-hook ()
+  (setq indent-tabs-mode t)
+  (dtrt-indent-mode t)
+
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+  (c-set-offset 'arglist-intro '+)
+  (c-set-offset 'arglist-close 0)
+)
+(add-hook 'c-mode-common-hook 'my-c-mode-hook)
 
 ;; Indent CSS files in C-style
 ;(setq cssm-indent-function #'cssm-c-style-indenter)
