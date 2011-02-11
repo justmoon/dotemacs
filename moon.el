@@ -79,6 +79,13 @@
 ;; nXhtml
 (load "vendor/nxhtml/autostart.el")
 
+;; MuMaMo-Mode for rhtml files
+(add-to-list 'load-path "~/path/to/your/elisp/nxml-directory/util")
+(require 'mumamo-fun)
+(setq mumamo-chunk-coloring 'submode-colored)
+(add-to-list 'auto-mode-alist '("\\.rhtml\\'" . eruby-html-mumamo))
+(add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-html-mumamo))
+
 ;; Line numbers
 (require 'linum)
 (global-linum-mode)
