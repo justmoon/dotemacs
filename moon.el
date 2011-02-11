@@ -41,8 +41,6 @@
   (setq indent-tabs-mode t)
   (dtrt-indent-mode t)
 
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
   (c-set-offset 'arglist-intro '+)
   (c-set-offset 'arglist-close 0)
 )
