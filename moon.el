@@ -100,6 +100,8 @@
 															  ?\x2007)
 									(number-to-string line)) 'face 'linum))))))
 
+;; Column number in modeline
+(column-number-mode 1)
 
 ;; Key rebinding
 (global-set-key (kbd "RET") 'newline-and-indent)
