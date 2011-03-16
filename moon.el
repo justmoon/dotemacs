@@ -76,6 +76,7 @@
 
 ;; nXhtml
 (load "vendor/nxhtml/autostart.el")
+(tabkey2-mode t)
 
 ;; MuMaMo-Mode for rhtml files
 (add-to-list 'load-path "~/path/to/your/elisp/nxml-directory/util")
