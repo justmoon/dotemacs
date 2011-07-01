@@ -85,6 +85,10 @@
 (add-to-list 'auto-mode-alist '("\\.rhtml\\'" . eruby-html-mumamo))
 (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-html-mumamo))
 
+;; Coffeescript
+(add-to-list 'load-path "~/.emacs.d/vendor/coffee-mode")
+(require 'coffee-mode)
+
 ;; Line numbers
 (require 'linum)
 (global-linum-mode)

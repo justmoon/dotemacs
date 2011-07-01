@@ -16,3 +16,6 @@
 [submodule "vendor/column-marker"]
 	path = vendor/column-marker
 	url = git://github.com/emacsmirror/column-marker.git
+[submodule "vendor/coffee-mode"]
+	path = vendor/coffee-mode
+	url = https://github.com/defunkt/coffee-mode.git
