@@ -23,9 +23,9 @@
 (require 'redo "vendor/redo.el")
 
 ;; Indentation behavior
-(setq-default tab-width 4)
-(setq default-tab-width 4)
-(setq-default indent-tabs-mode t)
+(setq-default tab-width 2)
+(setq default-tab-width 2)
+(setq-default indent-tabs-mode nil)
 (setq cua-auto-tabify-rectangles nil)
 (add-hook 'yaml-mode-hook '(lambda () (set (make-local-variable 'indent-tabs-mode) nil)))
 
