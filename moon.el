@@ -184,3 +184,5 @@
 ;; Highlight column 80
 ;(require 'column-marker "vendor/column-marker/column-marker.el")
 ;(add-hook 'font-lock-mode-hook (lambda () (interactive) (column-marker-1 80)))
+
+(yas/load-directory "~/.emacs.d/snippets")

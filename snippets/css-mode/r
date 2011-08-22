@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#contributor : Stefan Thomas <justmoon@members.fsf.org>
+#name : ... { ... }
+# --
+$1 {
+	$2
+}
