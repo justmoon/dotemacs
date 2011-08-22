@@ -35,10 +35,11 @@
 
 ;; Auto-detect indentation
 (require 'dtrt-indent "vendor/dtrt-indent/dtrt-indent.el")
+(dtrt-indent-mode t)
 
 ;; Special rules for argument indentation (affecting PHP arrays)
 (defun my-c-mode-hook ()
-  (setq indent-tabs-mode t)
+  (setq indent-tabs-mode nil)
   (dtrt-indent-mode t)
 
   (c-set-offset 'arglist-intro '+)
