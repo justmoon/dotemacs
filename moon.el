@@ -185,4 +185,7 @@
 ;(require 'column-marker "vendor/column-marker/column-marker.el")
 ;(add-hook 'font-lock-mode-hook (lambda () (interactive) (column-marker-1 80)))
 
+;; YASnippet
+(add-to-list 'load-path "~/.emacs.d/vendor/yasnippet")
+(require 'yasnippet)
 (yas/load-directory "~/.emacs.d/snippets")

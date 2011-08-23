@@ -22,3 +22,6 @@
 [submodule "vendor/js2-mode"]
 	path = vendor/js2-mode
 	url = https://github.com/szimek/js2-mode.git
+[submodule "vendor/yasnippet"]
+	path = vendor/yasnippet
+	url = https://github.com/emacsmirror/yasnippet.git
