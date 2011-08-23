@@ -7,9 +7,6 @@
 [submodule "vendor/backup-dir"]
 	path = vendor/backup-dir
 	url = http://github.com/emacsmirror/backup-dir.git
-[submodule "vendor/xrefresh"]
-	path = vendor/xrefresh
-	url = git://github.com/justmoon/xrefresh-emacs.git
 [submodule "vendor/color-theme"]
 	path = vendor/color-theme
 	url = git://github.com/emacsmirror/color-theme.git

@@ -71,10 +71,6 @@
       kept-new-versions 3
       version-control t)
 
-;; Start XRefresh server
-(require 'xrefresh "vendor/xrefresh/xrefresh.el")
-(xrefresh-start)
-
 ;; nXhtml
 (load "vendor/nxhtml/autostart.el")
 (tabkey2-mode t)
