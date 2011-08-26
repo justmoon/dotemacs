@@ -23,6 +23,7 @@
 (require 'redo "vendor/redo.el")
 
 ;; Indentation behavior
+(setq c-basic-indent 2)
 (setq-default tab-width 2)
 (setq default-tab-width 2)
 (setq-default indent-tabs-mode nil)
