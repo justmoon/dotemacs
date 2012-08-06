@@ -2,3 +2,10 @@
 .DS_Store
 starter-kit-2.*
 *.tar
+.smex-items
+auto-save-list
+backups
+elpa
+semanticdb
+places
+ede-projects.el
