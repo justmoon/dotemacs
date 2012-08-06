@@ -56,6 +56,19 @@
 
 ;; Line numbers
 (global-linum-mode)
+(add-hook
+ 'linum-before-numbering-hook
+ (lambda ()
+   (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
+     (setq linum-format
+           `(lambda (line)
+              (propertize
+               (concat
+                (truncate-string-to-width ""
+                                          (- ,w (length (number-to-string line)))
+                                          nil
+                                          ?\x2007)
+                (number-to-string line)) 'face 'linum))))))
 
 ;; Column number in modeline
 (column-number-mode 1)
