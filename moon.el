@@ -74,6 +74,9 @@
 ;; Column number in modeline
 (column-number-mode 1)
 
+;; Undo tree
+(global-undo-tree-mode t)
+
 ;; Key rebinding
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-j") 'newline)
