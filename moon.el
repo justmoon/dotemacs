@@ -19,17 +19,24 @@
 ;;(add-to-list 'default-frame-alist '(height . 60))
 ;;(add-to-list 'default-frame-alist '(width . 155))
 
+;; Path
+(add-to-list 'load-path "~/.emacs.d/")
+
 ;; Indentation
+(require 'google-c-style)
 (setq c-basic-indent 2)
 (setq js-indent-level 2)
 (setq-default tab-width 2)
 (setq default-tab-width 2)
 (setq-default indent-tabs-mode nil)
 (defun my-c-mode-hook ()
-  (dtrt-indent-mode t)
-  (c-set-offset 'innamespace 0)
+  (google-set-c-style)
+  (c-set-offset 'arglist-close 0)
+  ;;(dtrt-indent-mode t)
+  ;;(c-set-offset 'innamespace 0)
   )
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
+
 
 ;; Backspace should delete tabs (not convert tabs to spaces)
 (setq c-backspace-function 'backward-delete-char)
