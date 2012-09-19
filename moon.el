@@ -62,6 +62,13 @@
 (add-to-list 'auto-mode-alist '("\\.gyp$" . js-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js-mode))
 
+;; Markdown
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+
+;; PHP
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+
 ;; Line numbers
 (global-linum-mode)
 (add-hook
