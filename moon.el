@@ -89,7 +89,7 @@
 (column-number-mode 1)
 
 ;; Undo tree
-(global-undo-tree-mode t)
+(if (fboundp 'global-undo-tree-mode) (global-undo-tree-mode t))
 
 ;; Key rebinding
 (global-set-key (kbd "RET") 'newline-and-indent)
