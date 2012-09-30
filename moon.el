@@ -73,6 +73,14 @@
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
 
+;; Jade/Stylus
+(add-to-list 'load-path "~/.emacs.d/vendor/jade-mode")
+(require 'sws-mode)
+(require 'jade-mode)
+(require 'stylus-mode)
+(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+(add-to-list 'auto-mode-alist '("\\.styl$" . stylus-mode))
+
 ;; Line numbers
 (global-linum-mode)
 (add-hook
