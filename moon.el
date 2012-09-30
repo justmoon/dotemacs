@@ -22,6 +22,10 @@
 ;; Path
 (add-to-list 'load-path "~/.emacs.d/")
 
+;; Mac OS flyspell fix
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
+
 ;; Indentation
 (require 'google-c-style)
 (setq c-basic-indent 2)
