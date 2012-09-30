@@ -126,6 +126,13 @@
 ;;(setq cua-toggle-set-mark nil) ; Original set-mark behavior - no TMM
 (cua-mode)
 
+;; Org Mode HTML Stylesheet
+(setq org-export-html-style-include-scripts nil
+      org-export-html-style-include-default nil)
+
+(setq org-export-html-style
+      "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://m.je/org/org-style.css\" />")
+
 ;; Color scheme
 (custom-set-faces
  '(font-lock-builtin-face ((((class color) (min-colors 88) (background light)) (:foreground "#A52A2A"))))
