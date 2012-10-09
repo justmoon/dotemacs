@@ -16,3 +16,5 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
