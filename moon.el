@@ -141,6 +141,31 @@
 (setq org-export-html-style
       "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://m.je/org/org-style.css\" />")
 
+;; Auto-detect whether .h files are C or C++
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+(defun bh-choose-header-mode ()
+  (interactive)
+  (if (string-equal (substring (buffer-file-name) -2) ".h")
+      (progn
+        ;; OK, we got a .h file, if a .m file exists we'll assume it's
+                                        ; an objective c file. Otherwise, we'll look for a .cpp file.
+        (let ((dot-m-file (concat (substring (buffer-file-name) 0 -1) "m"))
+              (dot-c-file (concat (substring (buffer-file-name) 0 -1) "c")))
+          (if (file-exists-p dot-m-file)
+              (progn
+                (objc-mode)
+                )
+            (if (file-exists-p dot-c-file)
+                (c-mode)
+              )
+            )
+          )
+        )
+    )
+  )
+
+(add-hook 'find-file-hook 'bh-choose-header-mode)
+
 ;; JS2 mode - mooz fork
 (add-to-list 'load-path "~/.emacs.d/vendor/js2-mode")
 (autoload 'js2-mode "js2-mode" nil t)
