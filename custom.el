@@ -4,6 +4,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(css-indent-offset 2)
+ '(fill-column 80)
+ '(js2-basic-offset 2)
  '(magit-status-buffer-switch-function (quote switch-to-buffer)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
