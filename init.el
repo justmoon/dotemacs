@@ -9,7 +9,8 @@
   (package-refresh-contents))
 
 (defvar my-packages '(starter-kit undo-tree dtrt-indent coffee-mode
-                                  markdown-mode php-mode)
+                                  markdown-mode php-mode less-css-mode
+                                  auto-complete)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
