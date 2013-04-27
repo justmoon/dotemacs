@@ -41,7 +41,6 @@
   )
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
 
-
 ;; Backspace should delete tabs (not convert tabs to spaces)
 (setq c-backspace-function 'backward-delete-char)
 
@@ -118,9 +117,17 @@
 
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x m") 'eshell)
+(global-set-key (kbd "C-x t") 'mediawiki-draft)
 (global-set-key (kbd "C-x C-i") 'imenu)
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
 (global-set-key (kbd "C-c n") 'esk-cleanup-buffer)
+
+;; MediaWiki mode key bindings
+(eval-after-load "mediawiki"
+  '(progn
+     (define-key mediawiki-mode-map (kbd "C-o") 'mediawiki-open)
+     (define-key mediawiki-mode-map (kbd "C-x o") 'mediawiki-open-page-at-point)
+     (define-key mediawiki-mode-map (kbd "C-s") 'mediawiki-save)))
 
 ;; Windmove
 ;;(setq windmove-wrap-around t)
@@ -170,6 +177,10 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/js2-mode")
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+;; Scons
+(setq auto-mode-alist(cons '("SConstruct" . python-mode) auto-mode-alist))
+(setq auto-mode-alist(cons '("SConscript" . python-mode) auto-mode-alist))
 
 ;; Color scheme
 (custom-set-faces

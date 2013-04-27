@@ -10,7 +10,7 @@
 
 (defvar my-packages '(starter-kit undo-tree dtrt-indent coffee-mode
                                   markdown-mode php-mode less-css-mode
-                                  auto-complete)
+                                  auto-complete mediawiki)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)

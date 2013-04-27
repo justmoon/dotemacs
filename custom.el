@@ -7,7 +7,9 @@
  '(css-indent-offset 2)
  '(fill-column 80)
  '(js2-basic-offset 2)
- '(magit-status-buffer-switch-function (quote switch-to-buffer)))
+ '(magit-status-buffer-switch-function (quote switch-to-buffer))
+ '(mediawiki-site-alist (quote (("Wikipedia" "http://en.wikipedia.org/w/" "username" "password" "Main Page") ("Ripple Wiki" "https://ripple.com/wiki/" "Justmoon" "" "User:Justmoon"))))
+ '(mediawiki-site-default "Ripple Wiki"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
