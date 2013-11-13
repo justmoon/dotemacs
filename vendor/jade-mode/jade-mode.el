@@ -40,6 +40,7 @@ For detail, see `comment-dwim'."
   (eval-when-compile
     (regexp-opt
      '("if" "else" "for" "in" "each" "case" "when" "default" "block" "extends"
+       "block append" "block prepend" "append" "prepend"
        "include" "yield" "mixin") 'words))
   "Jade keywords.")
 
@@ -85,6 +86,9 @@ For detail, see `comment-dwim'."
 
   (setq mode-name "Jade")
   (setq major-mode 'jade-mode)
+
+  ;; comment syntax
+  (set (make-local-variable 'comment-start) "// ")
 
   ;; default tab width
   (setq sws-tab-width 2)
